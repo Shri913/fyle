@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing Agency</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General styles */
+        .image-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-wrapper:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay button {
+            color: white;
+            font-size: 20px;
+            border: none;
+            outline: none;
+            background: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            transition: background 0.3s ease;
+        }
+
+        .overlay button:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .what-we-do-images {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .what-we-do-images .image-wrapper {
+            flex: 0 0 calc(33.33% - 10px); /* Adjust width as needed */
+        }
+
+        .dot-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #717171;
+        }
+
+        .project-description {
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        .project-description:hover {
+            color: #dc3545;
+        }
+
+        /* Growth Cards Section */
+        .growth-cards .growth-card {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .growth-cards .growth-card:hover {
+            transform: translateY(-5px);
+            border: 2px solid #dc3545; /* Highlight border color on hover */
+        }
+
+        .growth-cards .icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .growth-cards .info {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Red color icons */
+        .growth-cards .growth-card:nth-child(1) .icon i {
+            color: #dc3545; /* Red color for the heart icon */
+        }
+
+        .growth-cards .growth-card:nth-child(2) .icon i {
+            color: #dc3545; /* Red color for the watch icon */
+        }
+
+        .growth-cards .growth-card:nth-child(3) .icon i {
+            color: #dc3545; /* Red color for the tick mark icon */
+        }
+
+        .growth-cards .growth-card:nth-child(4) .icon i {
+            color: #dc3545; /* Red color for the trophy icon */
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid d-flex align-items-center justify-content-center py-5">
+        <div class="row no-gutters shadow-lg">
+            <!-- Award Winning Section -->
+            <div class="col-md-6 text-section p-5">
+                <h2 class="text-danger">AWARD WINNING</h2>
+                <h1 class="display-4 font-weight-bold">DIGITAL MARKETING AGENCY</h1>
+                <p class="lead">Morbi sed lacus nec risus finibus feugiat at fermentum nibh. Pellentesque vitae ante at elit fringilla acc at purus, Morbi sed lacus nec risus finibus feugiat at fermentum.</p>
+                <button class="btn btn-danger btn-lg" data-toggle="modal" data-target="#contactModal">CONTACT US</button>
+            </div>
+            <div class="col-md-6 image-section">
+                <img id="award-winning-image" src="images/first.jpg" class="img-fluid" alt="Award Winning Image">
+            </div>
+
+            <!-- What We Do Section -->
+            <div class="col-md-12 what-we-do mt-5">
+                <div>
+                    <h2 class="text-danger mb-1">WHAT WE DO</h2>
+                    <h3 class="text-black">Service We Provide</h3>
+                </div>
+                <div class="what-we-do-images">
+                    <div class="image-wrapper">
+                        <img src="images/f.jpg.png" class="img-fluid" alt="Service 1">
+                        <div class="overlay">
+                            <button class="btn btn-danger" onclick="window.open('https://www.fylehq.com', '_blank')">Read More</button>
+                        </div>
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="images/s.jpg.png" class="img-fluid" alt="Service 2">
+                        <div class="overlay">
+                            <button class="btn btn-danger" onclick="window.open('https://www.fylehq.com', '_blank')">Read More</button>
+                        </div>
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="images/t.jpg.png" class="img-fluid" alt="Service 3">
+                        <div class="overlay">
+                            <button class="btn btn-danger" onclick="window.open('https://www.fylehq.com', '_blank')">Read More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="dot-container mt-4">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+
+            <!-- Our Project Section -->
+            <div class="col-md-12 our-project mt-5">
+                <div class="projects-container mt-4">
+                    <h2>Our Projects: What We Are Best At</h2>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="project-image">
+                                <img id="project1-image" src="images/project1.png" class="img-fluid" alt="Project 1">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="project-descriptions">
+                                <div class="project-description" data-image="images/project1.png" onclick="changeProjectImage('images/project1.png')">
+                                    <h3>Project 1</h3>
+                                    <p>Our groundbreaking project in AI development, integrating machine learning algorithms for predictive analytics.</p>
+                                </div>
+                                <div class="project-description" data-image="images/project2.png" onclick="changeProjectImage('images/project2.png')">
+                                    <h3>Project 2</h3>
+                                    <p>Revolutionizing the way we interact with technology through innovative user interface designs and seamless user experiences.</p>
+                                </div>
+                                <div class="project-description" data-image="images/project3.png" onclick="changeProjectImage('images/project3.png')">
+                                    <h3>Project 3</h3>
+                                    <p>Innovative solutions for modern business challenges, leveraging cutting-edge technologies to streamline operations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Growth Cards Section -->
+            <div class="container-fluid mt-5">
+                <h2 class="text-center mb-4">Our Company Growth</h2>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="growth-card">
+                            <div class="icon"><i class="fas fa-heart text-danger"></i></div>
+                            <div class="info">
+                                <h3>Happy Clients</h3>
+                                <p>1030+</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="growth-card">
+                            <div class="icon"><i class="fas fa-watch text-danger"></i></div>
+                            <div class="info">
+                                <h3>Satisfied Customers</h3>
+                                <p>199+</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="growth-card">
+                            <div class="icon"><i class="fas fa-check text-danger"></i></div>
+                            <div class="info">
+                                <h3>Days of Completion</h3>
+                                <p>1591+</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="growth-card">
+                            <div class="icon"><i class="fas fa-trophy text-danger"></i></div>
+                            <div class="info">
+                                <h3>Awards Won</h3>
+                                <p>75+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        function changeProjectImage(imageUrl) {
+            document.getElementById('project1-image').src = imageUrl;
+        }
+
+        function currentSlide(slideIndex) {
+            var dots = document.getElementsByClassName("dot");
+            var images = document.getElementsByClassName("project-image");
+
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            dots[slideIndex - 1].classList.add("active");
+
+            var imageSrc = document.getElementsByClassName("project-description")[slideIndex - 1].getAttribute("data-image");
+            document.getElementById('project1-image').src = imageSrc;
+        }
+    </script>
+</body>
+</html>
